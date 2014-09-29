@@ -632,13 +632,11 @@ void stringCallback(char *myString)
         responseStr.toCharArray(response, responseStr.length() + 1);
         Firmata.sendString(response);
         return;
-    } else {
-        Firmata.sendString("not matched");
     }
-    Firmata.sendString(myString);
+    Firmata.sendString("XX:unknown");
 }
 
-void setup() 
+void setup()
 {
   Firmata.setFirmwareVersion(FIRMATA_MAJOR_VERSION, FIRMATA_MINOR_VERSION);
 
